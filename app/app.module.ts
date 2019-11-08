@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { CounterComponent } from './counter.component'
 import { TodosComponent } from './todos.component'
+import { LoginComponent } from './login.component'
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { TodosComponent } from './todos.component'
   declarations: [
     AppComponent,
     CounterComponent,
-    TodosComponent
+    TodosComponent,
+    LoginComponent
   ]
 })
 export class AppModule {}

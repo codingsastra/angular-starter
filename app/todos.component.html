@@ -4,7 +4,18 @@
     <button (click)="handleClick()">Add</button>
     <ul>
         <li *ngFor="let todo of todos">
-            {{ todo }} <button (click)="removeTodo(todo)">Remove Todo</button>
+            <div [ngStyle]="{'text-decoration':todo.isCompleted == true ? 'line-through' : 'none'}">
+                {{ todo.text }} <button *ngIf="todo.isCompleted==false" (click)="completeTodo(todo.id)">Complete</button>
+            </div>  
         </li>
     </ul>
+    <div *ngIf="todos.length==0">
+        No todos to do here.
+    </div>
+    <div>
+        {{ 100 | currency:'INR' | lowercase }}
+        {{ 'Varma' | lowercase }}
+
+        {{ student |  json }}
+    </div>
 </div>

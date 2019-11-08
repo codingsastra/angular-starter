@@ -31,6 +31,9 @@ import { Component } from '@angular/core';
       <div>
           <todos></todos>
       </div>
+      <div>
+        <login></login>
+      </div>
     </div>
   `
 })

@@ -1,0 +1,26 @@
+<div>
+    <h1>Login</h1>
+    <form name="loginForm" #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)">
+        <label for="username">User Name</label>
+        <input type="text" #username="ngModel" pattern="[A-Za-z0-9]{0,5}" name="username" ngModel required/>
+        <ul class="errors" [hidden]="username.valid">
+            <li [hidden]="!username.hasError('required')">
+              Username is required
+            </li>
+            <li [hidden]="!username.hasError('pattern')">
+                Invalid Username
+              </li>
+          </ul>
+        <label for="password">Password</label>
+        <input type="text"  minlength="6" name="password" #password="ngModel" ngModel required/>
+        <ul class="errors" [hidden]="password.valid">
+            <li [hidden]="!password.hasError('required')">
+              Password is required
+            </li>
+            <li [hidden]="!password.hasError('minlength')">
+                Invalid password
+              </li>
+          </ul>
+        <button type="submit" [disabled]="!loginForm.valid">Login</button>
+    </form>
+</div>
